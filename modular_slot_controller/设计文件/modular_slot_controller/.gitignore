@@ -1,0 +1,39 @@
+# --- KiCad ---
+# Local UI state (window positions, last-opened paths) — machine specific
+*.kicad_prl
+# Project lock file, present while the project is open in KiCad
+*.kicad_pro.lck
+*.lck
+# KiCad's own local-history backups (contains a nested git repo)
+.history/
+*-backups/
+_backup/
+_autosave-*
+*.bak
+fp-info-cache
+fp-info-cache-*
+
+# --- Fab / plotting outputs ---
+fab/
+gerber/
+gerbers/
+*.gbr
+*.gbrjob
+*.drl
+*.gto
+*.gbo
+*.gtp
+*.gbp
+*.gts
+*.gbs
+*.gko
+*.gm1
+*.pos
+
+# --- OS / editor ---
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+.idea/
+__pycache__/

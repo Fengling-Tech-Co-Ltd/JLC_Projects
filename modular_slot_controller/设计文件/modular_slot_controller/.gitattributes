@@ -1,0 +1,20 @@
+# Keep LF everywhere: KiCad writes LF and mixed endings create noisy diffs.
+* text=auto eol=lf
+
+# KiCad design files are text; force LF so KiCad-git round trips stay clean.
+*.kicad_sch  text eol=lf
+*.kicad_pcb  text eol=lf
+*.kicad_pro  text eol=lf
+*.kicad_prl  text eol=lf
+*.kicad_wks  text eol=lf
+*.kicad_sym  text eol=lf
+*.kicad_mod  text eol=lf
+*.kicad_dru  text eol=lf
+
+# Binary-ish artefacts
+*.step binary
+*.stp  binary
+*.wrl  binary
+*.png  binary
+*.pdf  binary
+*.zip  binary
