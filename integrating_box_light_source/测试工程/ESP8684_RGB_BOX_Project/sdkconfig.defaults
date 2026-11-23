@@ -1,0 +1,20 @@
+# ESP8684H4 XTAL freq (26MHz, default is 40MHz)
+# Without this, UART baudrate calculation is wrong, causing garbled output
+CONFIG_XTAL_FREQ_26=y
+
+# Flash size (4MB for ESP8684H4)
+CONFIG_ESPTOOLPY_FLASHSIZE_4MB=y
+
+# Console/log/REPL baud rate = 74880, do NOT set it here.
+# ESP_CONSOLE_UART_BAUDRATE is not user-promptable unless
+# CONFIG_ESP_CONSOLE_UART_CUSTOM is selected, so kconfgen always regenerates it
+# from the Kconfig default:
+#   default 74880 if (IDF_TARGET_ESP32C2 && XTAL_FREQ_26)
+# Since this board needs XTAL_FREQ_26 (see above), 74880 is the effective rate.
+# The handoff doc was updated to match; opening the port at 115200 shows garbage.
+
+# Full newlib formatting instead of newlib-nano.
+# The console prints floats (%.3f) and parses them (sscanf "%f");
+# nano format has no float support, so %f prints literal text and scanf fails.
+# Costs ~20-30KB of flash, irrelevant on 4MB.
+# CONFIG_NEWLIB_NANO_FORMAT is not set
